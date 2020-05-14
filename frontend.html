@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<title>Form</title>
+		<style>
+		input[type=submit] {
+  		background-color: #4CAF50;
+  		color: white;
+		}
+		</style>
+		<script>
+			function myFunction() {
+			
+  			var x = document.getElementById("myEmail").pattern;
+  			document.getElementById("res").innerHTML = x;
+			var y = document.getElementById("myphn").pattern;
+  			document.getElementById("demo").innerHTML = y;
+			var p = document.getElementById("mypsw").pattern;
+  			document.getElementById("demop").innerHTML = p;
+			}
+		</script>
+		
+	</head>
+	<body>
+		<h2>Contact From</h2>
+		<form action="full.php" method="get">
+			<b>Title</b><br>
+			<input type="radio" name="rd" id="mytitle" required/>Mr<br>
+			<input type="radio" name="rd" id="mytitle" required/>Mrs<br>
+			<input type="radio" name="rd" id="mytitle" required/>Ms<br>
+			<table cellspacing="0" width="50%" height="50%">
+			<tr>
+			<td><b>Name</b></td>
+			<td><input type="text" name="myname" id="myname" required/></td>
+			</tr>
+			<tr>
+			<td><b>Email</b></td>
+			<td><input type="text" name="myEmail" id="myEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required/></td>
+			</tr>
+			<tr>
+			<td><b>Password</b></td>
+			<td><input type="password" id="mypsw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required /><p>Must contain Capital letter, small letter, digit and atleat 8 characters</td>
+			</tr>
+			<tr>
+			<td><b>Phone</b></td>
+			<td><input type="text" name="myphn" id="myphn" pattern="[0-9]{10}" required/><p>Must contain 10 digits</p></td>
+			</tr>
+			<tr>
+			<td><b>Address</b></td>
+			<td><textarea rows="4" cols="50" name="comment" id ="add" required></textarea></td>
+			</tr>
+			</table>
+		
+			<input type="submit" value="Submit" onClick="myFunction()">
+		</form>
+	</body>
+</html>
